@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日誌 | 地層の探検日誌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Zen+Antique&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1633;
+  --navy-deep:#070d22;
+  --navy-soft:#16244d;
+  --gold:#d4a937;
+  --gold-light:#f0d58a;
+  --parchment:#efe3c4;
+  --line:rgba(212,169,55,.35);
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--parchment);
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  line-height:1.95;
+  font-size:16px;
+}
+a{color:var(--gold-light);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2{font-family:"Zen Antique","Shippori Mincho",serif;font-weight:400;color:var(--gold);line-height:1.5;margin:0}
+
+header.site{
+  display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,64px);
+  border-bottom:1px solid var(--line);
+  background:var(--navy-deep);
+}
+.logo{font-family:"Zen Antique",serif;font-size:1.25rem;color:var(--gold);letter-spacing:.08em}
+.logo:hover{text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{color:var(--parchment);padding:4px 0;border-bottom:2px solid transparent}
+nav a[aria-current="page"],nav a:hover{border-bottom-color:var(--gold);text-decoration:none;color:var(--gold-light)}
+
+.page-head{
+  padding:clamp(40px,7vw,80px) clamp(20px,5vw,64px) clamp(32px,5vw,56px);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(240,213,138,.18), transparent 40%),
+    linear-gradient(180deg,var(--navy-soft),var(--navy));
+  border-bottom:3px double var(--gold);
+}
+.page-head .wrap{max-width:720px}
+.page-head h1{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:.08em}
+.page-head p{margin:12px 0 0;opacity:.85}
+
+main{padding:clamp(32px,5vw,64px) clamp(20px,5vw,64px) clamp(56px,8vw,96px)}
+.feed{max-width:720px;margin:0 auto;border-left:1px solid var(--line)}
+.post{
+  position:relative;
+  padding:22px 0 22px 32px;
+  border-bottom:1px dashed var(--line);
+}
+.post:last-child{border-bottom:none}
+.post::before{
+  content:"";position:absolute;left:-6px;top:32px;
+  width:11px;height:11px;border-radius:50%;
+  background:var(--gold);border:2px solid var(--navy);
+}
+.post time{display:block;color:var(--gold);font-family:"Zen Antique",serif;font-size:.95rem;margin-bottom:4px}
+.post p{margin:0}
+.end{max-width:720px;margin:32px auto 0;text-align:center;opacity:.7;font-size:.9rem}
+
+footer{padding:36px clamp(20px,5vw,64px);border-top:3px double var(--gold);background:var(--navy-deep);text-align:center;font-size:.9rem}
+footer ul{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;list-style:none;padding:0;margin:0 0 14px}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo" href="index.html">地層の探検日誌</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="blog.html" aria-current="page">日誌</a></li>
+      <li><a href="column.html">コラム</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-head" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">日誌</h1>
+    <p>考古学の勉強の進捗を、日付と一言で記録しています。新しい順に並んでいます。</p>
+  </div>
+</section>
+
+<main>
+  <div class="feed">
+    <article class="post">
+      <time datetime="2026-10-08">2026.10.08</time>
+      <p>考古学の勉強サイトを作りはじめた。まずはトップページから。</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-07">2026.10.07</time>
+      <p>地層累重の法則を復習。下の層ほど古い、という当たり前が発掘の土台になる。</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-06">2026.10.06</time>
+      <p>縄文土器の文様の違いを整理した。時代ごとの特徴を比べると面白い。</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-04">2026.10.04</time>
+      <p>放射性炭素年代測定の仕組みを読んだ。炭素14の半減期から年代を割り出す考え方は、頭の中でまだ整理中。</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-02">2026.10.02</time>
+      <p>古代エジプトのロゼッタ・ストーンについて調べた。3種類の文字が刻まれていたから解読できたという話にわくわくした。</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-09-30">2026.09.30</time>
+      <p>貝塚が「ごみ捨て場」だけではないことを知った。食生活や祈りの跡まで残っているらしい。</p>
+    </article>
+  </div>
+  <p class="end">ここまでが最初の記録です。</p>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="blog.html">日誌</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">このサイトについて</a></li>
+  </ul>
+  <p style="margin:0">&copy; 2026 Azalea Creative Room</p>
+</footer>
+
+</body>
+</html>
