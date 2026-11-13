@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム | 地層の探検日誌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Zen+Antique&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c1633;
+  --navy-deep:#070d22;
+  --navy-soft:#16244d;
+  --gold:#d4a937;
+  --gold-light:#f0d58a;
+  --parchment:#efe3c4;
+  --line:rgba(212,169,55,.35);
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--navy);
+  color:var(--parchment);
+  font-family:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  line-height:1.95;
+  font-size:16px;
+}
+a{color:var(--gold-light);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:"Zen Antique","Shippori Mincho",serif;font-weight:400;color:var(--gold);line-height:1.5;margin:0}
+
+header.site{
+  display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,5vw,64px);
+  border-bottom:1px solid var(--line);
+  background:var(--navy-deep);
+}
+.logo{font-family:"Zen Antique",serif;font-size:1.25rem;color:var(--gold);letter-spacing:.08em}
+.logo:hover{text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+nav a{color:var(--parchment);padding:4px 0;border-bottom:2px solid transparent}
+nav a[aria-current="page"],nav a:hover{border-bottom-color:var(--gold);text-decoration:none;color:var(--gold-light)}
+
+.page-head{
+  padding:clamp(40px,7vw,80px) clamp(20px,5vw,64px) clamp(32px,5vw,56px);
+  background:
+    radial-gradient(circle at 85% 20%, rgba(240,213,138,.18), transparent 40%),
+    linear-gradient(180deg,var(--navy-soft),var(--navy));
+  border-bottom:3px double var(--gold);
+}
+.page-head .wrap{max-width:1100px;margin:0 auto}
+.page-head h1{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:.08em}
+.page-head p{margin:12px 0 0;opacity:.85;max-width:34em}
+.jump{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:20px;list-style:none;padding:0}
+
+main section{padding:clamp(44px,6vw,80px) clamp(20px,5vw,64px)}
+main section:nth-child(even){background:var(--navy-deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wrap{max-width:1100px;margin:0 auto}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;margin-bottom:32px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sec-head h2{font-size:clamp(1.5rem,3vw,2rem)}
+.sec-head p{margin:0;opacity:.8}
+
+/* placeholder frames: replace the .ph div with <img src="..." alt="..."> */
+.ph{
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  border:2px dashed var(--gold);
+  background:rgba(212,169,55,.06);
+  color:var(--gold-light);
+  font-size:.9rem;padding:16px;
+}
+.work img{display:block;width:100%;height:auto;border:2px solid var(--gold)}
+
+/* 4koma */
+.koma-list{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+.koma .ph{aspect-ratio:1/2.6;max-width:260px;margin:0 auto}
+.work h3{font-size:1.15rem;margin:14px 0 4px}
+.work p{margin:0;font-size:.92rem;opacity:.85}
+.koma{text-align:center}
+
+/* illustration */
+.illust-list{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.illust .ph{aspect-ratio:4/3}
+
+/* essay */
+.essay{
+  max-width:720px;margin:0 auto;
+  background:var(--parchment);color:var(--navy-deep);
+  padding:clamp(28px,5vw,56px);
+  border-top:8px solid var(--gold);
+}
+.essay h3{color:var(--navy);font-size:clamp(1.35rem,3vw,1.8rem);margin-bottom:6px}
+.essay time{display:block;color:#7a5f14;font-size:.9rem;margin-bottom:24px}
+.essay p{margin:0 0 1.4em}
+.essay p:last-child{margin-bottom:0}
+
+footer{padding:36px clamp(20px,5vw,64px);border-top:3px double var(--gold);background:var(--navy-deep);text-align:center;font-size:.9rem}
+footer ul{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:center;list-style:none;padding:0;margin:0 0 14px}
+
+@media (max-width:820px){
+  .koma-list{grid-template-columns:1fr}
+  .illust-list{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo" href="index.html">地層の探検日誌</a>
+  <nav aria-label="メインメニュー">
+    <ul>
+      <li><a href="index.html">トップ</a></li>
+      <li><a href="blog.html">日誌</a></li>
+      <li><a href="column.html" aria-current="page">コラム</a></li>
+      <li><a href="about.html">このサイトについて</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-head" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">コラム</h1>
+    <p>考古学にまつわる4コマ漫画、イラスト、軽い小論文を置いています。</p>
+    <ul class="jump">
+      <li><a href="#koma">4コマ</a></li>
+      <li><a href="#illust">イラスト</a></li>
+      <li><a href="#essay">小論文</a></li>
+    </ul>
+  </div>
+</section>
+
+<main>
+  <section id="koma" aria-labelledby="koma-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="koma-title">4コマ漫画</h2>
+        <p>発掘や遺跡をテーマにした短い漫画です。</p>
+      </div>
+      <div class="koma-list">
+        <article class="work koma">
+          <!-- 画像に差し替え: <img src="koma1.png" alt="4コマの説明"> -->
+          <div class="ph" role="img" aria-label="4コマ漫画の画像を置く場所">ここに4コマ漫画の画像を置く</div>
+          <h3>発掘現場あるある</h3>
+          <p>地面を掘る人たちの日常を描きました。</p>
+        </article>
+        <article class="work koma">
+          <div class="ph" role="img" aria-label="4コマ漫画の画像を置く場所">ここに4コマ漫画の画像を置く</div>
+          <h3>土器のかけらパズル</h3>
+          <p>復元作業のたいへんさと楽しさの話です。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="illust" aria-labelledby="illust-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="illust-title">イラスト</h2>
+        <p>遺物や遺跡を描いたスケッチ集です。</p>
+      </div>
+      <div class="illust-list">
+        <figure class="work illust" style="margin:0">
+          <!-- 画像に差し替え: <img src="illust1.png" alt="イラストの説明"> -->
+          <div class="ph" role="img" aria-label="イラストの画像を置く場所">ここにイラストを置く</div>
+          <h3>縄文土器</h3>
+          <p>火焔型土器の模様を描きました。</p>
+        </figure>
+        <figure class="work illust" style="margin:0">
+          <div class="ph" role="img" aria-label="イラストの画像を置く場所">ここにイラストを置く</div>
+          <h3>ピラミッド</h3>
+          <p>夕日に染まる階段ピラミッドです。</p>
+        </figure>
+        <figure class="work illust" style="margin:0">
+          <div class="ph" role="img" aria-label="イラストの画像を置く場所">ここにイラストを置く</div>
+          <h3>探検家の道具</h3>
+          <p>移植ごて、ブラシ、メジャー。</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="essay" aria-labelledby="essay-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="essay-title">小論文</h2>
+        <p>考古学について、短く考えたことを書いています。</p>
+      </div>
+      <article class="essay">
+        <h3>なぜ人は掘りたくなるのか</h3>
+        <time datetime="2026-10-08">2026.10.08</time>
+        <p>考古学の面白さは、答えが地面の下にあるところだと思う。文字に残らなかった暮らしは、土の中の土器や炭、貝殻の山の中に静かに眠っている。</p>
+        <p>私たちは、ふだん歴史を教科書で知る。けれど教科書に載るのは、誰かが書き残したことだけだ。書かれなかった毎日の食事や道具、祈りの形は、掘らなければ出てこない。</p>
+        <p>もうひとつ好きなのは、発掘が一度きりの作業だということ。掘った場所は元には戻せない。だからこそ、記録の取り方や地層の読み方が大切になる。壊しながら知るという矛盾を、考古学者は丁寧な記録で埋めようとしている。</p>
+        <p>人が掘りたくなるのは、宝物がほしいからだけではないのだろう。見えない過去に触れたいという気持ちが、いちばん大きいのだと思う。</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <ul>
+    <li><a href="index.html">トップ</a></li>
+    <li><a href="blog.html">日誌</a></li>
+    <li><a href="column.html">コラム</a></li>
+    <li><a href="about.html">このサイトについて</a></li>
+  </ul>
+  <p style="margin:0">&copy; 2026 Azalea Creative Room</p>
+</footer>
+
+</body>
+</html>
